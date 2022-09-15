@@ -1,9 +1,13 @@
-import React from 'react'
-import './typeSearch.css'
-const TypeSearch = () => {
+import React from "react";
+import "./typeSearch.css";
+const TypeSearch = ({ typeList }) => {
   return (
-    <div>TypeSearch</div>
-  )
-}
+    <div className="type-search">
+      {typeList.map((type) => (
+        <button >{type.name}</button>
+      ))}
+    </div>
+  );
+};
 
-export default TypeSearch
+export default TypeSearch;
