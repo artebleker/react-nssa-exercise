@@ -4,23 +4,28 @@ import PokeList from "../pokeList/PokeList";
 import './pokeListContainer.css'
 const PokeListContainer = () => {
   
-  const [pokedex, setPokex] = useState([]);
+  const [pokemonData, setPokemonData] = useState([]);
+
 
   useEffect(() => {
-    const endPoint = "https://pokeapi.co/api/v2/pokemon/?limit=8000"
+  const endPointsPokemon = [];
+    for (let i = 1; i <= 898; i++) {
+      endPointsPokemon.push(
+        `https://pokeapi.co/api/v2/pokemon/${i}`
+      );
+    }
+
     axios
-      .get(endPoint)
-      .then((res) => {
-        const apiData = res.data;
-        setPokex(apiData.results);
+      .all(endPointsPokemon.map((end) => axios.get(end)))
+      .then((data) => {
+        setPokemonData(data);
       })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [setPokex]);
+      .catch((err) => console.error(err));
+      
+  }, []);
   return (
     <div>
-      <PokeList pokedex={pokedex} />
+      <PokeList pokedex={pokemonData} />
     </div>
   );
 };
