@@ -4,12 +4,26 @@ import PokeList from "../pokeList/PokeList";
 import "./pokeListContainer.css";
 import TypeSearch from "../typeSearch/TypeSearch";
 const PokeListContainer = () => {
+
+  // Data list of all pokemons
   const [pokemonData, setPokemonData] = useState([]);
+  // Loading
+  const [isLoading, setIsLoading] = useState(true)
+
+  // Name list of all types
   const [typeList, setTypeList] = useState([]);
+
+  // Type selected
+  const [queryType, setQueryType] = useState("")
+  
+
+
+
 
   useEffect(() => {
     const endPointsPokemon = [];
-    for (let i = 1; i <= 20; i++) {
+    for (let i = 1; i <= 905; i++) {
+      //905
       endPointsPokemon.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
     }
 
@@ -17,6 +31,7 @@ const PokeListContainer = () => {
       .all(endPointsPokemon.map((end) => axios.get(end)))
       .then((data) => {
         setPokemonData(data);
+        setIsLoading(false)
       })
       .catch((err) => console.error(err));
     axios
@@ -25,16 +40,25 @@ const PokeListContainer = () => {
         setTypeList(res.data.results);
       })
       .catch((err) => console.error(err));
+
   }, []);
 
   return (
     <div>
-      <TypeSearch typeList={typeList}/>
-      {pokemonData.length > 0 ? (
-        <PokeList pokedex={pokemonData} />
+      <TypeSearch typeList={typeList} queryType={queryType} setQueryType={setQueryType}/>
+    <p>{queryType}</p>
+   {console.log(pokemonData.filter((f)=> f.data.types.map((m)=>(m.type.name)).includes(queryType)))}
+      { isLoading?(
+        
+        <div>
+          <p>Loading . . .</p>
+        </div>
       ) : (
         <div>
-          <p>Loading. . .</p>
+          <PokeList pokedex={queryType === ""? pokemonData :
+        pokemonData.filter((f)=> f.data.types.map((m)=>(m.type.name)).includes(queryType))
+        } />
+          
         </div>
       )}
     </div>
