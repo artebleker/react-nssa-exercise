@@ -16,10 +16,6 @@ const PokeListContainer = () => {
   // Type selected
   const [queryType, setQueryType] = useState("")
   
-
-
-
-
   useEffect(() => {
     const endPointsPokemon = [];
     for (let i = 1; i <= 905; i++) {
@@ -47,7 +43,6 @@ const PokeListContainer = () => {
     <div>
       <TypeSearch typeList={typeList} queryType={queryType} setQueryType={setQueryType}/>
     <p>{queryType}</p>
-   {console.log(pokemonData.filter((f)=> f.data.types.map((m)=>(m.type.name)).includes(queryType)))}
       { isLoading?(
         
         <div>

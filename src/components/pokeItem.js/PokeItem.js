@@ -1,9 +1,11 @@
 import React from 'react'
 import './pokeItem.css'
+import { Link } from 'react-router-dom'
 const PokeItem = ({pokemon}) => {
   console.log(pokemon.data)
   return (
-    <div>
+    <Link to={`/detail?pokemon=${pokemon.data.name}`}>
+    <div>    
         <p className='number'>{pokemon.data.id}</p>
         <p className='name'>{pokemon.data.name}</p>
         <img src={pokemon.data.sprites.front_default} alt=''/>
@@ -11,6 +13,7 @@ const PokeItem = ({pokemon}) => {
           <p>{type.type.name}</p>
         )}</div>
     </div>
+    </Link>
   )
 }
 
