@@ -1,0 +1,7 @@
+.abilityOn{
+    display:flex;
+    /* position: absolute; */
+}
+.abilityOff{
+    display: none;
+}

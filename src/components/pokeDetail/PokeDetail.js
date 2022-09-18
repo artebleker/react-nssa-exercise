@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import "./pokeDetail.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import PokeAbility from "./PokeAbility";
 const PokeDetail = () => {
-  const [types, setTypes] = useState([]);
+  const [weaknessTypes, setWeaknessTypes] = useState([]);
+  const [strengthTypes, setStrengthTypes] = useState([]);
   let query = new URLSearchParams(window.location.search);
   let pokemonQuery = query.get("pokemon");
 
@@ -22,9 +24,16 @@ const PokeDetail = () => {
       temporalWeaknessArray.push(data
         .map((m) => m.data.damage_relations.double_damage_from)
         [i].map((m) => m.name))
+      } 
+          let temporalStrengthArray= []
+    for (let i = 0; i < data.length; i++) {
+      temporalStrengthArray.push(data
+        .map((m) => m.data.damage_relations.double_damage_to)
+        [i].map((m) => m.name))
         
       }
-      setTypes(temporalWeaknessArray.flatMap((result) => result))
+      setWeaknessTypes(temporalWeaknessArray.flatMap((result) => result))
+      setStrengthTypes(temporalStrengthArray.flatMap((result) => result))
       })
       .catch((err) => console.error(err));
      
@@ -53,7 +62,13 @@ const PokeDetail = () => {
             <p className="number-detail">{pokemon.data.id}</p>
             <p className="name-detail">{pokemon.data.name}</p>
           </div>
-          <img className="" src={pokemon.data.sprites.front_default} alt="" />
+          <img className="" src={pokemon.data.sprites.front_default} alt={pokemon.data.name} />
+          <p>Ability</p>
+          <PokeAbility ability={pokemon.data.abilities[0].ability.name}/>
+          <p>Height</p>
+          <p>{pokemon.data.height/10}m</p>
+          <p>Weight</p>
+          <p>{pokemon.data.weight/10}kg</p>
           <div className="type-detail">
             <p>Type</p>
             {pokemon.data.types.map((type) => (
@@ -61,12 +76,24 @@ const PokeDetail = () => {
             ))}
           </div>
           <div className="type-detail">
+            <div>
             <p>Weakness</p>
-            {types.map((weak)=>{
+            {weaknessTypes.length>0?
+            weaknessTypes.map((weak)=>{
               return(
                 <p>{weak}</p>
               )
-            })}
+            }): <p>This pokemon has no Weakness,<br/>it is Awesome!</p>}
+            </div>
+            <div>
+            <p>Strength</p>
+            {strengthTypes.length>0?
+            strengthTypes.map((strength)=>{
+              return(
+                <p>{strength}</p>
+              )
+            }): <p>This pokemon has no Strengths,<br/>it's not that good...</p>}
+            </div>
           </div>
         </>
       ) : (
@@ -76,4 +103,4 @@ const PokeDetail = () => {
   );
 };
 
-export default PokeDetail;
+export default memo(PokeDetail);
