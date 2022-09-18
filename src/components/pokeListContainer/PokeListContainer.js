@@ -4,18 +4,17 @@ import PokeList from "../pokeList/PokeList";
 import "./pokeListContainer.css";
 import TypeSearch from "../typeSearch/TypeSearch";
 const PokeListContainer = () => {
-
   // Data list of all pokemons
   const [pokemonData, setPokemonData] = useState([]);
   // Loading
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   // Name list of all types
   const [typeList, setTypeList] = useState([]);
 
   // Type selected
-  const [queryType, setQueryType] = useState("")
-  
+  const [queryType, setQueryType] = useState("");
+
   useEffect(() => {
     const endPointsPokemon = [];
     for (let i = 1; i <= 90; i++) {
@@ -27,7 +26,7 @@ const PokeListContainer = () => {
       .all(endPointsPokemon.map((end) => axios.get(end)))
       .then((data) => {
         setPokemonData(data);
-        setIsLoading(false)
+        setIsLoading(false);
       })
       .catch((err) => console.error(err));
     axios
@@ -36,24 +35,31 @@ const PokeListContainer = () => {
         setTypeList(res.data.results);
       })
       .catch((err) => console.error(err));
-
   }, []);
 
   return (
     <div>
-      <TypeSearch typeList={typeList} queryType={queryType} setQueryType={setQueryType}/>
-    <p>{queryType}</p>
-      { isLoading?(
-        
+      <TypeSearch
+        typeList={typeList}
+        queryType={queryType}
+        setQueryType={setQueryType}
+      />
+      <p>{queryType}</p>
+      {isLoading ? (
         <div>
           <p>Loading . . .</p>
         </div>
       ) : (
         <div>
-          <PokeList pokedex={queryType === ""? pokemonData :
-        pokemonData.filter((f)=> f.data.types.map((m)=>(m.type.name)).includes(queryType))
-        } />
-          
+          <PokeList
+            pokedex={
+              queryType === ""
+                ? pokemonData
+                : pokemonData.filter((f) =>
+                    f.data.types.map((m) => m.type.name).includes(queryType)
+                  )
+            }
+          />
         </div>
       )}
     </div>

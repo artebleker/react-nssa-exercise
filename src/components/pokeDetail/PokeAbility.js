@@ -14,12 +14,12 @@ useEffect(() => {
       })
       .catch((err) => console.error(err));
     }, [ability]);
-
+// console.log(abilityData.data.effect_entries[0].effect)
   return (
     <div>
 <button onClick={()=> setIsModalAbility(!isModalAbility)}>{ability}</button>
 <div className={isModalAbility? 'abilityOn' : 'abilityOff'}>
-<p>{abilityData.data.effect_entries[1].effect}</p>    
+{/* <p>{abilityData.data.effect_entries[1].effect}</p> */}
 </div>
     </div>
   )

@@ -1,7 +1,14 @@
+.type-search-bar{
+    display: flex;
+    flex-direction: column;
+}
 .type-search{
     display: grid;
     grid-template-columns: repeat(5, 0.3fr);
     justify-content: center;
     align-items: center;
+}
 
+.type-search-off{
+    display: none;
 }
