@@ -1,0 +1,28 @@
+.up-button div{
+    width: 0;
+    height: 0;
+    border: solid;
+    border-width: 0 20px 30px 20px;
+    border-color:  transparent transparent rgb(161, 73, 175) transparent ;
+   
+}
+.up-button{
+background:none ;
+border: solid 2px black;
+border-radius: 50px;
+cursor: pointer;
+position: fixed;
+right: 20px;
+bottom: 20px;
+width: 60px;
+height: 60px;
+display: grid;
+place-content: center;
+}
+
+.up-button div:hover{
+    border-color: transparent transparent rgb(10, 84, 123) transparent;
+}
+.up-button:hover{
+    background:rgb(161, 73, 175) ;
+}

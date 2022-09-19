@@ -4,6 +4,7 @@ import PokeList from "../pokeList/PokeList";
 import "./pokeListContainer.css";
 import TypeSearch from "../typeSearch/TypeSearch";
 import Loader from "../loader/Loader";
+import UpButton from '../upButton/UpButton'
 const PokeListContainer = () => {
   // Data list of all pokemons
   const [pokemonData, setPokemonData] = useState([]);
@@ -64,6 +65,7 @@ const PokeListContainer = () => {
                   )
             }
           />
+          <UpButton/>
         </div>
       )}
     </div>

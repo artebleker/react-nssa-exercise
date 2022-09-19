@@ -21,7 +21,8 @@
     background: rgb(131, 188, 219);    
     border: solid 2px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    padding: 2px;
+    padding: 4px;
+    font-weight: 600;
 }
 .type-search-bar-button_open:hover{
     background: rgb(10, 84, 123);    

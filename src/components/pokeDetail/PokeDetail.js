@@ -8,6 +8,7 @@ import Loader from "../loader/Loader";
 import PokeStrengthAndWeakness from "./PokeStrengthAndWeakness";
 import noImage from '../../img/noImage.png'
 import { images } from "../../assets/images";
+import UpButton from "../upButton/UpButton";
 const PokeDetail = () => {
   const [weaknessTypes, setWeaknessTypes] = useState([]);
   const [strengthTypes, setStrengthTypes] = useState([]);
@@ -225,6 +226,7 @@ const PokeDetail = () => {
               :
               <p>This pokemon has no evolutions</p>}
           </div>
+          <UpButton/>
         </>
       ) : (
         <div>

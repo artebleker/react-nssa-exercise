@@ -11,7 +11,7 @@ const TypeSearch = ({ typeList, queryType, setQueryType }) => {
         <button className="type-search-bar-button_open"  onClick={()=>setQueryType(type.name)}><p>{type.name}</p></button>
       ))}    
       </div>
-      <button className="type-search-bar-button_open"  onClick={()=>setQueryType("")}>CLEAR</button>
+      <button className="type-search-bar-button_open"  onClick={()=>setQueryType("")}><p>CLEAR</p></button>
     </div>
     </div>
   );
