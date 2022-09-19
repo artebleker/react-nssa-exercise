@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-nssa-exercise/static/css/main.10d25d56.css",
+    "main.js": "/react-nssa-exercise/static/js/main.22d35beb.js",
+    "static/media/notFound.jpg": "/react-nssa-exercise/static/media/notFound.c738217eb322980b553d.jpg",
+    "static/media/rock.png": "/react-nssa-exercise/static/media/rock.82baeea9ce0864e61bcd.png",
+    "static/media/fairy.png": "/react-nssa-exercise/static/media/fairy.1e6db9b1b12efce6afe2.png",
+    "static/media/fire.png": "/react-nssa-exercise/static/media/fire.d97d1f16306e083f1219.png",
+    "static/media/ice.png": "/react-nssa-exercise/static/media/ice.8d5366e330239a8a6ff3.png",
+    "static/media/psychic.png": "/react-nssa-exercise/static/media/psychic.c732063baf3b87c6a827.png",
+    "static/media/dark.png": "/react-nssa-exercise/static/media/dark.6ca18d39bc2734164c6b.png",
+    "static/media/bug.png": "/react-nssa-exercise/static/media/bug.647df22df761736ea80e.png",
+    "static/media/normal.png": "/react-nssa-exercise/static/media/normal.28f76e4128973cf09dfd.png",
+    "static/media/grass.png": "/react-nssa-exercise/static/media/grass.29806be7adc0e3d9cc1d.png",
+    "index.html": "/react-nssa-exercise/index.html",
+    "main.10d25d56.css.map": "/react-nssa-exercise/static/css/main.10d25d56.css.map",
+    "main.22d35beb.js.map": "/react-nssa-exercise/static/js/main.22d35beb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10d25d56.css",
+    "static/js/main.22d35beb.js"
+  ]
+}
