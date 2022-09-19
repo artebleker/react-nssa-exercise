@@ -48,6 +48,7 @@
    border: solid rgb(161, 73, 175) 3px;
    background: rgb(243, 214, 238);
    font-weight: 800;
+   cursor: pointer;
 }
 .back-button:hover{
     background: rgb(161, 73, 175);

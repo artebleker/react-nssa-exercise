@@ -6,7 +6,7 @@ import noImage from '../../img/noImage.png'
 const PokeItem = ({ pokemon }) => {
   return (
     <>
-      <Link to={`/detail?pokemon=${pokemon.data.name}`}>
+      <Link to={`/detail?pokemon=${pokemon.data.name}`} onClick={window.scrollTo(0, 0)}>
         <div className="poke-item">
         <div className="poke-number-name">
           <p >N° {pokemon.data.id}</p>

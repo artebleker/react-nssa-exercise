@@ -2,6 +2,10 @@
     display: grid;
     place-content: center;
     height: 100vh;
+    text-align: center;
+}
+.not-found-page button{
+    font-size: 3rem;
 }
 .not-found-page img{
     width: 300px;

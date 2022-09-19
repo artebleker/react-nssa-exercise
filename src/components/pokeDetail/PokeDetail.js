@@ -126,7 +126,7 @@ const PokeDetail = () => {
 
   return (
     <>     
-    <button className="back-button" onClick={(e)=>e.preventDefault()}> <Link to={"/"}>Go Back ! </Link></button>
+    <button className="back-button"> <Link to={"/"}>Go Back ! </Link></button>
     <div className="poke-detail">
       {pokemon ? (
         <>
@@ -210,8 +210,8 @@ const PokeDetail = () => {
 
             </div>
           <div className="evolution-detail">
-            <h3>EVOLUTIONS</h3>
-            {evolutionChain ?
+            <h3>CHAIN of EVOLUTIONS</h3>
+            {evolutionChain.length>0 ?
               evolutionChain.map((evolve) => (
                 <button
                   onClick={() => {
@@ -223,7 +223,7 @@ const PokeDetail = () => {
                 </button>
                              ) )
               :
-              <p>This Pokemon has no Evolutions</p>}
+              <p>This pokemon has no evolutions</p>}
           </div>
         </>
       ) : (
