@@ -1,0 +1,16 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+li{
+    list-style: none;
+}
+
+h1, h2, h3, h4, p, a, li{
+    font-family: 'Reem Kufi Ink', sans-serif;
+}

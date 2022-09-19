@@ -18,7 +18,7 @@ const PokeListContainer = () => {
 
   useEffect(() => {
     const endPointsPokemon = [];
-    for (let i = 1; i <= 90; i++) {
+    for (let i = 1; i <= 151; i++) {
       //905
       endPointsPokemon.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
     }

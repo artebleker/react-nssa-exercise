@@ -1,15 +1,187 @@
-.ability-on{
-    display:flex;
-    /* position: absolute; */
+/* PokeDetail */
+.poke-detail {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.ability-off{
-    display: none;
+.header-detail {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.header-detail button {
+  justify-content: center;
+  align-items: center;
+  margin: 0px 100px;
+  background: none;
+  border: none;
+}
+.button-left {
+  width: 0;
+  height: 0;
+  border: solid;
+  border-width: 30px 60px 30px 0;
+  border-color: transparent rgb(10, 84, 123) transparent transparent;
+}
+.button-left:hover{
+    border-color: transparent rgb(131, 188, 219) transparent transparent;
+}
+.button-right {
+  width: 0;
+  height: 0;
+  border: solid;
+  border-width: 30px 0 30px 60px;
+  border-color: transparent transparent transparent rgb(10, 84, 123);
 }
 
-.button-display-on{
+.button-right:hover{
+    border-color: transparent transparent transparent rgb(131, 188, 219);
+
+} 
+
+.back-button{
+    padding: 5px 20px;
+    margin: 20px;
+   border-radius: 20px ;
+   border: solid rgb(161, 73, 175) 3px;
+   background: rgb(243, 214, 238);
+   font-weight: 800;
+}
+.back-button:hover{
+    background: rgb(161, 73, 175);
+    border: solid rgb(243, 214, 238) 3px ;
+}
+/* type detail */
+.type-detail{
+text-align: center;
+margin: 10px 30px;
+padding: 25px 60px;
+border: solid rgb(131, 188, 219) 4px;
+border-radius: 20px;
+display: flex;
+flex-direction: row;
+gap: 60px;
+justify-content: center;
+align-items: center;
+}
+.type-detail-div{
     display: flex;
+    gap: 15px;
 }
-.button-display-off{
-    display: none;
+.type-detail-div img{
+    width: 80px;
+    height: 80px;
+    margin: 5px 0px 0px;
+}
 
+/* displays */
+.ability-on {
+  display: flex;
+}
+.ability-off {
+  display: none;
+}
+
+.button-display-on {
+  display: flex;
+}
+.button-display-off {
+  display: none;
+}
+
+/* Poke Strength and Weakness */
+
+.poke-sandw-total-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 25px;
+  padding: 15px;
+  border: solid 5px rgb(10, 84, 123);
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-width: 50vw;
+}
+.poke-sandw-container {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  text-align: center;
+}
+.poke-sandw img {
+  width: 50px;
+  height: 50px;
+}
+
+/* evolution detail */
+.evolution-detail {
+  text-align: center;
+  margin: 20px;
+}
+.evolution-detail button {
+  background: none;
+  border: none;
+  margin: 10px 3px ;
+}
+
+/* stats */
+.stats-container{
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background: rgb(10, 84, 123);
+    border-radius: 20px;
+    min-width: 70vw;
+}
+.stats-container h3{
+    color: white;
+    margin-bottom: 15px;
+}
+.stats-container-grid{
+display: grid;
+grid: auto auto auto/ auto auto auto
+}
+
+.li-type-stats{
+    margin: 4px;
+    padding: 15px;
+    border: solid 4px rgb(131, 188, 219);
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+}
+
+/* ability detail */
+.ability-detail{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px;
+    gap: 15px;
+}
+
+.ability-detail button{
+    padding: 10px;
+    border-radius: 15px;
+    border: solid 2px black;
+    box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.278);
+    cursor: pointer;
+}
+
+.ability-container{
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 60vw;
+    min-width: 40vw;
+    border-radius: 20px;
+    background: linear-gradient(to top, rgba(10, 83, 123, 0.511), rgba(24, 109, 155, 0.01)80%) ;;
 }

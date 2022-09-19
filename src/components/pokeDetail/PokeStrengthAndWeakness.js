@@ -2,20 +2,22 @@ import React from 'react'
 import { images } from '../../assets/images'
 const PokeStrengthAndWeakness = ({title, strengthAndWeakness}) => {
   return (
-    <div>
-    <h3>{title}</h3>
+    <div className="poke-sandw-total-container">
+      <h3>{title}</h3>
+    <div className="poke-sandw-container">
     {strengthAndWeakness.length > 0 ? (
       strengthAndWeakness.map((sw) => {
         return (
-          <div className="">
+          <div className="poke-sandw">
             <img src={images.find((f) => f.name === sw).img} alt={sw}/>
-            <p>{sw}</p>
+            <p>{sw.toUpperCase()}</p>
           </div>
         )
       })
     ) : (
-      <p>This pokemon has not {title}</p>
+      <p>This pokemon has not {title.toLowerCase()}</p>
     )}
+  </div>
   </div>
   )
 }

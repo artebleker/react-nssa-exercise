@@ -6,6 +6,8 @@ import PokeAbility from "./PokeAbility";
 import PokeItem from "../pokeItem/PokeItem";
 import Loader from "../loader/Loader";
 import PokeStrengthAndWeakness from "./PokeStrengthAndWeakness";
+import noImage from '../../img/noImage.png'
+import { images } from "../../assets/images";
 const PokeDetail = () => {
   const [weaknessTypes, setWeaknessTypes] = useState([]);
   const [strengthTypes, setStrengthTypes] = useState([]);
@@ -123,10 +125,13 @@ const PokeDetail = () => {
   }, [pokemonQuery]);
 
   return (
-    <div>
-      <Link to={"/"}>Back </Link>
+    <>     
+    <button className="back-button" onClick={(e)=>e.preventDefault()}> <Link to={"/"}>Go Back ! </Link></button>
+    <div className="poke-detail">
       {pokemon ? (
         <>
+
+          <div className="header-detail">
           <button
             onClick={() => {
               window.location.reload();
@@ -135,9 +140,11 @@ const PokeDetail = () => {
               pokemon.data.id > 1 ? "button-display-on" : "button-display-off"
             }
           >
-            <Link to={`/detail?pokemon=${pokemon.data.id - 1}`}>Previous </Link>
+            <Link to={`/detail?pokemon=${pokemon.data.id - 1}`}><div className="button-left"></div></Link>
           </button>
-          <button
+            <h3 >N° {pokemon.data.id}</h3>
+            <h1 >{pokemon.data.name.toUpperCase()}</h1>
+            <button
             onClick={() => {
               window.location.reload();
             }}
@@ -145,47 +152,56 @@ const PokeDetail = () => {
               pokemon.data.id < 905 ? "button-display-on" : "button-display-off"
             }
           >
-            <Link to={`/detail?pokemon=${pokemon.data.id + 1}`}>Next </Link>
+            <Link to={`/detail?pokemon=${pokemon.data.id + 1}`}><div className="button-right"></div> </Link>
           </button>
-
-          <div className="header-detail">
-            <p className="number-detail">{pokemon.data.id}</p>
-            <p className="name-detail">{pokemon.data.name}</p>
           </div>
 
-          <img
-            className=""
-            src={pokemon.data.sprites.other["official-artwork"].front_default}
+          <img 
+            src={pokemon.data.sprites.other["official-artwork"].front_default || noImage}
             alt={pokemon.data.name}
           />
-          <p>Ability</p>
-          <PokeAbility
-            ability={pokemon.data.abilities[0].ability.name}
-            abilityImg={pokemon.data.sprites.other.dream_world.front_default}
-          />
-          <p>Height</p>
+            <div className="type-detail">
+            <div >
+            <h3>Type</h3>
+            <div className="type-detail-div">
+            {pokemon.data.types.map((type) => (
+              <div>
+              <img src={images.find((f)=>f.name === type.type.name).img} alt={type.type.name}/>
+                <h4>{type.type.name.toUpperCase()}</h4>
+                </div>
+                ))}
+                </div>
+                </div>
+          <div >
+          <h3>Height</h3>
           <p>{pokemon.data.height / 10}m</p>
-          <p>Weight</p>
+          </div>
+          <div >
+          <h3>Weight</h3>
           <p>{pokemon.data.weight / 10}kg</p>
+          </div>
+          </div>
+          
           <div className="stats-container">
-            <p>Stats</p>
-            <ul>
+            <h3>STATS</h3>
+            <ul className="stats-container-grid">
               {pokemon.data.stats.map((stat, index) => {
                 return (
                   <li key={index}>
-                    {stat.base_stat} {stat.stat.name}
+                    <div className="li-type-stats"><p> {stat.base_stat} {stat.stat.name}</p></div>   
                   </li>
                 );
               })}
             </ul>
           </div>
-          <div className="type-detail">
-            <p>Type</p>
-            {pokemon.data.types.map((type) => (
-              <p>{type.type.name}</p>
-            ))}
+          <div className="ability-detail">
+          <h3>ABILITY</h3>
+          <PokeAbility
+            ability={pokemon.data.abilities[0].ability.name}
+            abilityImg={pokemon.data.sprites.other.dream_world.front_default  || noImage}
+          /> 
           </div>
-          <div className="type-detail">
+          <div className="">
        
             <PokeStrengthAndWeakness title='Weakness' strengthAndWeakness={weaknessTypes}/>
             <PokeStrengthAndWeakness title='Inmune' strengthAndWeakness={noDamageFromTypes}/>
@@ -193,8 +209,9 @@ const PokeDetail = () => {
             <PokeStrengthAndWeakness title='Resistent' strengthAndWeakness={resistenToTypes}/>
 
             </div>
-          <div className="type-detail">
-            {evolutionChain &&
+          <div className="evolution-detail">
+            <h3>Evolutions</h3>
+            {evolutionChain ?
               evolutionChain.map((evolve) => (
                 <button
                   onClick={() => {
@@ -204,7 +221,9 @@ const PokeDetail = () => {
                 >
                   <PokeItem pokemon={evolve} />
                 </button>
-              ))}
+                             ) )
+              :
+              <p>This Pokemon has no Evolutions</p>}
           </div>
         </>
       ) : (
@@ -213,6 +232,8 @@ const PokeDetail = () => {
         </div>
       )}
     </div>
+    </>
+
   );
 };
 

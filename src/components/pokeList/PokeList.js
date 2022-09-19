@@ -8,6 +8,7 @@ const PokeList = ({pokedex}) => {
     {pokedex.length <= 0 ?
       <div className='poke-list'>
         <p>0 Pokemons Found</p>
+       
       </div>
       :
       <div className='poke-list'>

@@ -1,8 +1,9 @@
 .poke-list {
   display: grid;
-  grid: auto auto auto / auto auto auto;
-  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid: auto / auto auto auto auto; */
+  grid-template-columns: repeat(5, 1fr);
   place-content: center;
+  margin: 30px;
   /* justify-content: center;
   align-content: center; */
 }
