@@ -1,6 +1,7 @@
 import React, { useState, memo, useEffect } from "react";
 import axios from "axios";
-const PokeAbility = ({ ability }) => {
+
+const PokeAbility = ({ ability, abilityImg }) => {
   const [isModalAbility, setIsModalAbility] = useState(false);
   const [abilityData, setAbilityData] = useState([]);
 
@@ -13,18 +14,24 @@ const PokeAbility = ({ ability }) => {
       })
       .catch((err) => console.error(err));
   }, [ability]);
-  console.log(abilityData.data);
+  
   return (
     <div>
       <button onClick={() => setIsModalAbility(!isModalAbility)}>
         {ability}
       </button>
       <div className={isModalAbility ? "abilityOn" : "abilityOff"}>
+        {abilityImg?
+            <img src={abilityImg} alt=""/>
+            :
+            <div></div>
+        }
         {abilityData.data ? (
           <p>{abilityData.data.effect_entries[1].effect}</p>
         ) : (
           <p>Loading...</p>
         )}
+
       </div>
     </div>
   );
