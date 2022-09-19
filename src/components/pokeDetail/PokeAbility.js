@@ -1,5 +1,6 @@
 import React, { useState, memo, useEffect } from "react";
 import axios from "axios";
+import Loader from "../loader/Loader";
 
 const PokeAbility = ({ ability, abilityImg }) => {
   const [isModalAbility, setIsModalAbility] = useState(false);
@@ -29,7 +30,9 @@ const PokeAbility = ({ ability, abilityImg }) => {
         {abilityData.data ? (
           <p>{abilityData.data.effect_entries[1].effect}</p>
         ) : (
-          <p>Loading...</p>
+         <div>
+          <Loader/>
+          </div>
         )}
 
       </div>

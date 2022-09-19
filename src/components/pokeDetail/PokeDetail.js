@@ -4,7 +4,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import PokeAbility from "./PokeAbility";
 import PokeItem from "../pokeItem/PokeItem";
-import { images } from "../../assets/images";
+import Loader from "../loader/Loader";
+import PokeStrengthAndWeakness from "./PokeStrengthAndWeakness";
 const PokeDetail = () => {
   const [weaknessTypes, setWeaknessTypes] = useState([]);
   const [strengthTypes, setStrengthTypes] = useState([]);
@@ -185,67 +186,14 @@ const PokeDetail = () => {
             ))}
           </div>
           <div className="type-detail">
-            <div>
-              <p>Weakness</p>
-              {weaknessTypes.length > 0 ? (
-                weaknessTypes.map((weak) => {
-                  return (
-                    <div className="">
-                      <img src={images.find((f) => f.name === weak).img} alt={weak}/>
-                      <p>{weak}</p>
-                    </div>
-                  )
-                })
-              ) : (
-                <p>This pokemon has no Weakness</p>
-              )}
-            </div>
-            <div>
-              <p>Inmune</p>
-              {noDamageFromTypes.length > 0 ? (
-                noDamageFromTypes.map((noDamage) => {
-                  return (
-                    <div className="">
-                      <img src={images.find((f) => f.name === noDamage).img} alt={noDamage}/>
-                      <p>{noDamage}</p>
-                    </div>
-                  )
-                })
-              ) : (
-                <p>This pokemon has not inmunity</p>
-              )}
-            </div>
-            <div>
-              <p>Strength</p>
-              {strengthTypes.length > 0 ? (
-                strengthTypes.map((strength) => {
-                  return (
-                    <div className="">
-                      <img src={images.find((f) => f.name === strength).img} alt={strength}/>
-                      <p>{strength}</p>
-                    </div>
-                  )
-                })
-              ) : (
-                <p>This pokemon has no Strengths</p>
-              )}
-            </div>
-            <div>
-              <p>Resistent to</p>
-              {resistenToTypes.length > 0 ? (
-                resistenToTypes.map((resistent) => {
-                  return (
-                    <div className="">
-                      <img src={images.find((f) => f.name === resistent).img} alt={resistent}/>
-                      <p>{resistent}</p>
-                    </div>
-                  )
-                })
-              ) : (
-                <p>This pokemon has no resistents</p>
-              )}
-            </div>
+       
+            <PokeStrengthAndWeakness title='Weakness' strengthAndWeakness={weaknessTypes}/>
+            <PokeStrengthAndWeakness title='Inmune' strengthAndWeakness={noDamageFromTypes}/>
+            <PokeStrengthAndWeakness title='Strength' strengthAndWeakness={strengthTypes}/>
+            <PokeStrengthAndWeakness title='Resistent' strengthAndWeakness={resistenToTypes}/>
 
+            </div>
+          <div className="type-detail">
             {evolutionChain &&
               evolutionChain.map((evolve) => (
                 <button
@@ -260,7 +208,9 @@ const PokeDetail = () => {
           </div>
         </>
       ) : (
-        <p>Loading</p>
+        <div>
+        <Loader/>
+        </div>
       )}
     </div>
   );

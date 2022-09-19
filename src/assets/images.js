@@ -17,6 +17,7 @@ import psychic from "../img/psychic.png"
 import rock from "../img/rock.png"
 import steel from "../img/steel.png"
 import water from "../img/water.png"
+import noImage from "../img/noImage.png"
 
 export const images = [
     {
@@ -90,6 +91,10 @@ export const images = [
     {
         name: "water",
         img:water
+    },
+    {
+        name: "noImage",
+        img:noImage
     },
   
     

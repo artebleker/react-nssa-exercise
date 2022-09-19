@@ -3,6 +3,7 @@ import axios from "axios";
 import PokeList from "../pokeList/PokeList";
 import "./pokeListContainer.css";
 import TypeSearch from "../typeSearch/TypeSearch";
+import Loader from "../loader/Loader";
 const PokeListContainer = () => {
   // Data list of all pokemons
   const [pokemonData, setPokemonData] = useState([]);
@@ -47,7 +48,7 @@ const PokeListContainer = () => {
       <p>{queryType}</p>
       {isLoading ? (
         <div>
-          <p>Loading . . .</p>
+          <Loader/>
         </div>
       ) : (
         <div>
