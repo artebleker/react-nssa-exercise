@@ -8,6 +8,8 @@ import PokeItem from "../pokeItem/PokeItem";
 const PokeDetail = () => {
   const [weaknessTypes, setWeaknessTypes] = useState([]);
   const [strengthTypes, setStrengthTypes] = useState([]);
+  const [resistenToTypes, setResistenToTypes] = useState([]);
+  const [noDamageFromTypes, setNoDamageFromTypes] = useState([]);
   let query = new URLSearchParams(window.location.search);
   let pokemonQuery = query.get("pokemon");
 
@@ -37,8 +39,26 @@ const PokeDetail = () => {
               [i].map((m) => m.name)
           );
         }
+        let temporalResistentToArray = [];
+        for (let i = 0; i < data.length; i++) {
+          temporalResistentToArray.push(
+            data
+              .map((m) => m.data.damage_relations.half_damage_from)
+              [i].map((m) => m.name)
+          );
+        }
+        let temporalNoDamageFromArray = [];
+        for (let i = 0; i < data.length; i++) {
+          temporalNoDamageFromArray.push(
+            data
+              .map((m) => m.data.damage_relations.no_damage_from)
+              [i].map((m) => m.name)
+          );
+        }
         setWeaknessTypes(temporalWeaknessArray.flatMap((result) => result));
         setStrengthTypes(temporalStrengthArray.flatMap((result) => result));
+        setResistenToTypes(temporalResistentToArray.flatMap((result) => result));
+        setNoDamageFromTypes(temporalNoDamageFromArray.flatMap((result) => result));
       })
       .catch((err) => console.error(err));
   }
@@ -103,8 +123,11 @@ const PokeDetail = () => {
       <Link to={"/"}>Back </Link>
       {pokemon ? (
         <>
+        <button onClick={()=>{window.location.reload()}} className={pokemon.data.id > 1 ? "buttonDisplayOn" : "buttonDisplayOff"}><Link to={ `/detail?pokemon=${pokemon.data.id - 1}`}>Previous </Link></button>
+        <button onClick={()=>{window.location.reload()}} className={pokemon.data.id < 905 ? "buttonDisplayOn" : "buttonDisplayOff"}><Link to={ `/detail?pokemon=${pokemon.data.id + 1}` } >Next </Link></button>
+       
           <div className="header-detail">
-            <p className="number-detail">{pokemon.data.id}</p>
+            <p className="number-detail">{pokemon.data.id }</p>
             <p className="name-detail">{pokemon.data.name}</p>
           </div>
 
@@ -122,7 +145,17 @@ const PokeDetail = () => {
           <p>{pokemon.data.height / 10}m</p>
           <p>Weight</p>
           <p>{pokemon.data.weight / 10}kg</p>
-
+<div className="stats-container">
+  <p>Stats</p>
+  <ul>
+{pokemon.data.stats.map((stat, index)=>{
+  return(
+    <li key={index}>{stat.base_stat} {stat.stat.name}</li>
+  )
+})
+}
+</ul>
+</div>
           <div className="type-detail">
             <p>Type</p>
             {pokemon.data.types.map((type) => (
@@ -138,9 +171,19 @@ const PokeDetail = () => {
                 })
               ) : (
                 <p>
-                  This pokemon has no Weakness,
-                  <br />
-                  it is Awesome!
+                  This pokemon has no Weakness
+                </p>
+              )}
+            </div>
+            <div>
+              <p>Inmune</p>
+              {noDamageFromTypes.length > 0 ? (
+                noDamageFromTypes.map((weak) => {
+                  return <p>{weak}</p>;
+                })
+              ) : (
+                <p>
+                  This pokemon has not inmunity
                 </p>
               )}
             </div>
@@ -152,9 +195,19 @@ const PokeDetail = () => {
                 })
               ) : (
                 <p>
-                  This pokemon has no Strengths,
-                  <br />
-                  it's not that good...
+                  This pokemon has no Strengths   
+                </p>
+              )}
+            </div>
+            <div>
+              <p>Resistent to</p>
+              {resistenToTypes.length > 0 ? (
+                resistenToTypes.map((strength) => {
+                  return <p>{strength}</p>;
+                })
+              ) : (
+                <p>
+                  This pokemon has no resistents
                 </p>
               )}
             </div>
