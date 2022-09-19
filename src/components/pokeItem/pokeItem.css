@@ -8,8 +8,14 @@
     padding: 10px;
     border: solid 5px rgb(131, 188, 219);
     border-radius: 15px;
-    background: linear-gradient(to bottom, rgb(10, 84, 123), rgba(24, 109, 155, 0.2)) ;
+    background: linear-gradient(to bottom, rgb(10, 84, 123), rgba(24, 109, 155, 0.3)) ;
     color: white;
+}
+.poke-item:hover{
+    background: linear-gradient(to bottom, rgb(24, 109, 155), rgba(24, 109, 155, 0.3)) ;
+}
+.poke-item:active{
+    background: linear-gradient(to bottom, rgb(161, 73, 175), rgba(243, 214, 238)) ;
 }
 .poke-item img{
     width: 120px;

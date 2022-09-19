@@ -6,9 +6,8 @@ const PokeList = ({pokedex}) => {
   return (
     <>
     {pokedex.length <= 0 ?
-      <div className='poke-list'>
-        <p>0 Pokemons Found</p>
-       
+      <div>
+        <h3 className='choosen-type'>No Pokemon Found</h3>
       </div>
       :
       <div className='poke-list'>

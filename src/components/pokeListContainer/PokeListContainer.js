@@ -39,13 +39,16 @@ const PokeListContainer = () => {
   }, []);
 
   return (
-    <div>
+    <div className="poke-list-container">
       <TypeSearch
         typeList={typeList}
         queryType={queryType}
         setQueryType={setQueryType}
       />
-      <p>{queryType}</p>
+      {
+        queryType !== "" &&
+      <h3 className="choosen-type">Pokemon Choosen Type: {queryType.toUpperCase()}</h3>
+      }
       {isLoading ? (
         <div>
           <Loader/>

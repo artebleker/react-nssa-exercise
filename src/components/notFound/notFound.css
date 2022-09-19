@@ -1,0 +1,11 @@
+.not-found-page{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+.not-found-page img{
+    width: 300px;
+    height: 300px;
+    margin-top: 15px ;
+    border: solid 4px rgb(161, 73, 175);
+}

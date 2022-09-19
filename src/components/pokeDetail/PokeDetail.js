@@ -210,7 +210,7 @@ const PokeDetail = () => {
 
             </div>
           <div className="evolution-detail">
-            <h3>Evolutions</h3>
+            <h3>EVOLUTIONS</h3>
             {evolutionChain ?
               evolutionChain.map((evolve) => (
                 <button

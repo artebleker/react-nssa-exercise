@@ -2,7 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
-
+body{
+    background:linear-gradient(to top, rgba(131, 188, 219,0.95), rgba(255, 255, 255, 0.95)), url('./img/background.jpg')  ;
+}
 a{
     text-decoration: none;
     color: black;
