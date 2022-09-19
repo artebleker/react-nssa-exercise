@@ -20,7 +20,7 @@ const PokeAbility = ({ ability, abilityImg }) => {
       <button onClick={() => setIsModalAbility(!isModalAbility)}>
         {ability}
       </button>
-      <div className={isModalAbility ? "abilityOn" : "abilityOff"}>
+      <div className={isModalAbility ? "ability-on" : "ability-off"}>
         {abilityImg?
             <img src={abilityImg} alt=""/>
             :

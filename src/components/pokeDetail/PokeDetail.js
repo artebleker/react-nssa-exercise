@@ -123,8 +123,8 @@ const PokeDetail = () => {
       <Link to={"/"}>Back </Link>
       {pokemon ? (
         <>
-        <button onClick={()=>{window.location.reload()}} className={pokemon.data.id > 1 ? "buttonDisplayOn" : "buttonDisplayOff"}><Link to={ `/detail?pokemon=${pokemon.data.id - 1}`}>Previous </Link></button>
-        <button onClick={()=>{window.location.reload()}} className={pokemon.data.id < 905 ? "buttonDisplayOn" : "buttonDisplayOff"}><Link to={ `/detail?pokemon=${pokemon.data.id + 1}` } >Next </Link></button>
+        <button onClick={()=>{window.location.reload()}} className={pokemon.data.id > 1 ? "button-display-on" : "button-display-off"}><Link to={ `/detail?pokemon=${pokemon.data.id - 1}`}>Previous </Link></button>
+        <button onClick={()=>{window.location.reload()}} className={pokemon.data.id < 905 ? "button-display-on" : "button-display-off"}><Link to={ `/detail?pokemon=${pokemon.data.id + 1}` } >Next </Link></button>
        
           <div className="header-detail">
             <p className="number-detail">{pokemon.data.id }</p>

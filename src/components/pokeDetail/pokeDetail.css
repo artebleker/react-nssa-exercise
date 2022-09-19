@@ -1,15 +1,15 @@
-.abilityOn{
+.ability-on{
     display:flex;
     /* position: absolute; */
 }
-.abilityOff{
+.ability-off{
     display: none;
 }
 
-.buttonDisplayOn{
+.button-display-on{
     display: flex;
 }
-.buttonDisplayOff{
+.button-display-off{
     display: none;
 
 }

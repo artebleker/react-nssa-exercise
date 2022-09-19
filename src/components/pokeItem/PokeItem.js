@@ -1,6 +1,7 @@
 import React from "react";
 import "./pokeItem.css";
 import { Link } from "react-router-dom";
+import { images } from "../../assets/images";
 const PokeItem = ({ pokemon }) => {
   return (
     <>
@@ -11,7 +12,8 @@ const PokeItem = ({ pokemon }) => {
           <img src={pokemon.data.sprites.front_default} alt="" />
           <div className="type">
             {pokemon.data.types.map((type) => (
-              <p>{type.type.name}</p>
+              <img src={images.find((f)=>f.name === type.type.name).img} alt={type.type.name}/>
+                         
             ))}
           </div>
         </div>
