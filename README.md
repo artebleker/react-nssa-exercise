@@ -1,5 +1,5 @@
 <!-- # Pokedex -->
-![pokedex](./src/img/pokedex.png)
+#![pokedex](./src/img/pokedex.png)
 #### Nacion Servicios Challenge: 
 This project is a web of all pokemons with their details, abilities, stats, evolutions, etc.
 This web allows the user to filter pokemons by their type.
@@ -66,5 +66,5 @@ This project was made using:
 
 #### Julián Bleker
 
-*[LinkedIn](https://www.linkedin.com/in/julian-bleker/)*
-*[GitHub](https://github.com/artebleker)*
+* [LinkedIn](https://www.linkedin.com/in/julian-bleker/)*
+* [GitHub](https://github.com/artebleker)*
