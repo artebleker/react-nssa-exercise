@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-nssa-exercise/static/css/main.9d91fae7.css",
-    "main.js": "/react-nssa-exercise/static/js/main.9a9a791c.js",
+    "main.css": "/react-nssa-exercise/static/css/main.fd69e013.css",
+    "main.js": "/react-nssa-exercise/static/js/main.1b298ad9.js",
     "static/media/pokedex.png": "/react-nssa-exercise/static/media/pokedex.973683464eb2b0224665.png",
     "static/media/notFound.jpg": "/react-nssa-exercise/static/media/notFound.c738217eb322980b553d.jpg",
     "static/media/noImage.png": "/react-nssa-exercise/static/media/noImage.3fd97b649c1e5a6bcb6f.png",
@@ -15,11 +15,11 @@
     "static/media/normal.png": "/react-nssa-exercise/static/media/normal.28f76e4128973cf09dfd.png",
     "static/media/grass.png": "/react-nssa-exercise/static/media/grass.29806be7adc0e3d9cc1d.png",
     "index.html": "/react-nssa-exercise/index.html",
-    "main.9d91fae7.css.map": "/react-nssa-exercise/static/css/main.9d91fae7.css.map",
-    "main.9a9a791c.js.map": "/react-nssa-exercise/static/js/main.9a9a791c.js.map"
+    "main.fd69e013.css.map": "/react-nssa-exercise/static/css/main.fd69e013.css.map",
+    "main.1b298ad9.js.map": "/react-nssa-exercise/static/js/main.1b298ad9.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d91fae7.css",
-    "static/js/main.9a9a791c.js"
+    "static/css/main.fd69e013.css",
+    "static/js/main.1b298ad9.js"
   ]
 }
