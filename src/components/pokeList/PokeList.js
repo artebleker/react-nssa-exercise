@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {memo} from 'react'
 import PokeItem from '../pokeItem/PokeItem'
 import './pokeList.css'
 const PokeList = ({pokedex}) => {
@@ -24,4 +24,4 @@ const PokeList = ({pokedex}) => {
   )
 }
 
-export default PokeList
+export default memo(PokeList)

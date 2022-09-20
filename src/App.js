@@ -11,9 +11,10 @@ function App() {
     <Header/>
     <BrowserRouter>
     <Routes>
-      <Route exact path='/'element={<PokeListContainer/>}/>
-      <Route path='/detail'element={<PokeDetail/>}/>
-      <Route path='*'element={<NotFound/>}/>
+      <Route exact path='/' element={<PokeListContainer/>}/>
+      <Route exact path='/react-nssa-exercise' element={<PokeListContainer/>}/>
+      <Route path='/detail' element={<PokeDetail/>}/>
+      <Route path='*' element={<NotFound/>}/>
     </Routes>
     </BrowserRouter>
     </>
