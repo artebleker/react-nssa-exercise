@@ -1,7 +1,28 @@
-# Pokedex
+<!-- # Pokedex -->
+![pokedex](./src/img/pokedex.png)
 #### Nacion Servicios Challenge: 
 This project is a web of all pokemons with their details, abilities, stats, evolutions, etc.
 This web allows the user to filter pokemons by their type.
+
+## Demo Link
+
+This link of the website is a demo of the project, this may not work perfectly
+[Link](https://artebleker.github.io/react-nssa-exercise/)
+
+## Website Preview
+
+The full list of all 905 Pokemon appears on the landing page
+
+![home](./src/img/home.png)
+
+The user can easily filter by their types
+
+![typesearch](./src/img/typesearch.png)
+
+The site is fully responsive.
+This is a detail view of a pokemon.
+
+![detail-complete](./src/img/detail-complete.png)
 
 ## Installation
 
@@ -46,3 +67,4 @@ This project was made using:
 #### Julián Bleker
 
 *[LinkedIn](https://www.linkedin.com/in/julian-bleker/)*
+*[GitHub](https://github.com/artebleker)*
