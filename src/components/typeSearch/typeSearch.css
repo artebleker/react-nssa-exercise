@@ -45,10 +45,9 @@
 .type-search-off {
   display: none;
 }
-
+/* Media queries */
 @media screen and (max-width: 400px) {
   .type-search-grid {
     grid-template-columns: repeat(4, 0.3fr);
   }
 }
-

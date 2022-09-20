@@ -58,6 +58,8 @@
   background: rgb(161, 73, 175);
   border: solid rgb(243, 214, 238) 3px;
 }
+
+
 /* type detail */
 .type-detail {
   text-align: center;
@@ -98,7 +100,6 @@
 }
 
 /* Poke Strength and Weakness */
-
 .poke-sandw-total-container {
   display: flex;
   flex-direction: column;
@@ -198,7 +199,6 @@
 }
 
 /* Media queries */
-
 @media screen and (max-width: 882px) {
   .header-detail {
     gap: 5px;
@@ -228,11 +228,10 @@
     padding: 10px 20px;
     gap: 50px;
   }
-  .ability-container{
+  .ability-container {
     margin: 0px;
-  display: flex;
-  flex-direction: column;
-
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -255,7 +254,7 @@
   }
   .poke-sandw-container {
     display: grid;
-    grid: auto auto auto  / auto auto auto  ;
+    grid: auto auto auto / auto auto auto;
     gap: 15px;
   }
   .poke-sandw img {

@@ -4,7 +4,7 @@
   place-content: center;
   margin: 30px;
 }
-
+/* Media queries */
 @media screen and (max-width: 1120px) {
   .poke-list {
     grid-template-columns: repeat(4, 1fr);

@@ -19,6 +19,7 @@ import steel from "../img/steel.png"
 import water from "../img/water.png"
 import noImage from "../img/noImage.png"
 
+// Images of all pokemon types
 export const images = [
     {
         name: "bug",

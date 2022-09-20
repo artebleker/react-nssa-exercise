@@ -1,38 +1,49 @@
-.poke-item{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-    padding: 10px;
-    border: solid 5px rgb(131, 188, 219);
-    border-radius: 15px;
-    background: linear-gradient(to bottom, rgb(10, 84, 123), rgba(24, 109, 155, 0.3)) ;
-    color: white;
+.poke-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 10px;
+  border: solid 5px rgb(131, 188, 219);
+  border-radius: 15px;
+  background: linear-gradient(
+    to bottom,
+    rgb(10, 84, 123),
+    rgba(24, 109, 155, 0.3)
+  );
+  color: white;
 }
-.poke-item:hover{
-    background: linear-gradient(to bottom, rgb(24, 109, 155), rgba(24, 109, 155, 0.3)) ;
+.poke-item:hover {
+  background: linear-gradient(
+    to bottom,
+    rgb(24, 109, 155),
+    rgba(24, 109, 155, 0.3)
+  );
 }
-.poke-item:active{
-    background: linear-gradient(to bottom, rgb(161, 73, 175), rgba(243, 214, 238)) ;
+.poke-item:active {
+  background: linear-gradient(
+    to bottom,
+    rgb(161, 73, 175),
+    rgba(243, 214, 238)
+  );
 }
-.poke-item img{
-    width: 120px;
-    height: 120px;
+.poke-item img {
+  width: 120px;
+  height: 120px;
 }
-.poke-number-name{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+.poke-number-name {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
-.poke-type{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+.poke-type {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
-.poke-type img{
-    width: 40px;
-    height: 40px;
-    
+.poke-type img {
+  width: 40px;
+  height: 40px;
 }

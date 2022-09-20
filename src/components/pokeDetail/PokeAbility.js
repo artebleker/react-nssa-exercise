@@ -13,23 +13,24 @@ const PokeAbility = ({ ability, abilityImg }) => {
       .then((data) => {
         setAbilityData(data);
       })
-      .catch((err) => {console.error(err); error('*')})
+      .catch((err) => {
+        console.error(err);
+        error("*");
+      });
   }, [ability]);
-  
+
   return (
     <div>
       <button onClick={() => setIsModalAbility(!isModalAbility)}>
         <h3>{ability.toUpperCase()}</h3>
       </button>
-      <div className={isModalAbility ? "ability-on ability-container" : "ability-off"}>
-        {abilityImg &&
-            <img src={abilityImg} alt="Ability"/>
-           
+      <div
+        className={
+          isModalAbility ? "ability-on ability-container" : "ability-off"
         }
-        {abilityData.data && 
-          <p>{abilityData.data.effect_entries[1].effect}</p>
-       }
-
+      >
+        {abilityImg && <img src={abilityImg} alt="Ability" />}
+        {abilityData.data && <p>{abilityData.data.effect_entries[1].effect}</p>}
       </div>
     </div>
   );

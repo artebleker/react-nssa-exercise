@@ -1,18 +1,30 @@
-*{
-    margin: 0px;
-    padding: 0px;
+/* Standard style for everithing in the site */
+* {
+  margin: 0px;
+  padding: 0px;
 }
-body{
-    background:linear-gradient(to top, rgba(131, 188, 219,0.95), rgba(255, 255, 255, 0.95)), url('./img/background.jpg')  ;
+body {
+  background: linear-gradient(
+      to top,
+      rgba(131, 188, 219, 0.95),
+      rgba(255, 255, 255, 0.95)
+    ),
+    url("./img/background.jpg");
 }
-a{
-    text-decoration: none;
-    color: black;
+a {
+  text-decoration: none;
+  color: black;
 }
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
-
-h1, h2, h3, h4, p, a, li{
-    font-family: 'Reem Kufi Ink', sans-serif;
+/* Google font Reem Kufi Ink */
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+li {
+  font-family: "Reem Kufi Ink", sans-serif;
 }
