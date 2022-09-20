@@ -4,8 +4,11 @@ import './App.css';
 import PokeListContainer from './components/pokeListContainer/PokeListContainer';
 import NotFound from './components/notFound/NotFound'
 import PokeDetail from './components/pokeDetail/PokeDetail'
+import Header from './components/header/Header';
 function App() {
   return (
+    <>
+    <Header/>
     <BrowserRouter>
     <Routes>
       <Route exact path='/'element={<PokeListContainer/>}/>
@@ -13,6 +16,7 @@ function App() {
       <Route path='*'element={<NotFound/>}/>
     </Routes>
     </BrowserRouter>
+    </>
   );
 }
 
