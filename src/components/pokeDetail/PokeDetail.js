@@ -1,7 +1,7 @@
 import React, { useState, useEffect, memo } from "react";
 import "./pokeDetail.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PokeAbility from "./PokeAbility";
 import PokeItem from "../pokeItem/PokeItem";
 import Loader from "../loader/Loader";
@@ -17,6 +17,7 @@ const PokeDetail = () => {
   let query = new URLSearchParams(window.location.search);
   let pokemonQuery = query.get("pokemon");
 
+  const error = useNavigate();
   function removeDuplicates(arr) {
     arr = arr.flatMap((result) => result);
     return arr.filter((item, index) => arr.indexOf(item) === index);
@@ -69,7 +70,7 @@ const PokeDetail = () => {
         setResistenToTypes(removeDuplicates(temporalResistentToArray));
         setNoDamageFromTypes(removeDuplicates(temporalNoDamageFromArray));
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {console.error(err); error('*')})
   }
 
   const [evolutionChain, setEvolutionChain] = useState([]);
@@ -103,15 +104,16 @@ const PokeDetail = () => {
               axios
                 .all(endPointEvolutionChain.map((end) => axios.get(end)))
                 .then((res) => setEvolutionChain(res))
-                .catch((err) => console.err(err));
+                .catch((err) => {console.error(err); error('*')})
             }
           })
 
-          .catch((err) => console.error(err));
+          .catch((err) => {console.error(err); error('*')})
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {console.error(err); error('*')})
   }
-
+ 
+  
   const [pokemon, setPokemon] = useState();
   useEffect(() => {
     const endPointPokemon = `https://pokeapi.co/api/v2/pokemon/${pokemonQuery}`;
@@ -122,7 +124,7 @@ const PokeDetail = () => {
         getTypes(data);
         getEvolution(data);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {console.error(err); error('*')})
   }, [pokemonQuery]);
 
   return (
