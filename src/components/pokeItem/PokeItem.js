@@ -14,8 +14,8 @@ const PokeItem = ({ pokemon }) => {
             </div>
           <img src={pokemon.data.sprites.front_default  || noImage} alt="" />
           <div className="poke-type">
-            {pokemon.data.types.map((type) => (
-              <img src={images.find((f)=>f.name === type.type.name).img} alt={type.type.name}/>
+            {pokemon.data.types.map((type, index) => (
+              <img key={index} src={images.find((f)=>f.name === type.type.name).img} alt={type.type.name}/>
                          
             ))}
           </div>

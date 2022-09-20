@@ -143,8 +143,10 @@ const PokeDetail = () => {
           >
             <Link to={`/detail?pokemon=${pokemon.data.id - 1}`}><div className="button-left"></div></Link>
           </button>
+          <div className="poke-name">
             <h3 >N° {pokemon.data.id}</h3>
             <h1 >{pokemon.data.name.toUpperCase()}</h1>
+            </div>
             <button
             onClick={() => {
               window.location.reload();
@@ -157,7 +159,7 @@ const PokeDetail = () => {
           </button>
           </div>
 
-          <img 
+          <img className="main-poke-img"
             src={pokemon.data.sprites.other["official-artwork"].front_default || noImage}
             alt={pokemon.data.name}
           />
@@ -165,8 +167,8 @@ const PokeDetail = () => {
             <div >
             <h3>Type</h3>
             <div className="type-detail-div">
-            {pokemon.data.types.map((type) => (
-              <div>
+            {pokemon.data.types.map((type, index) => (
+              <div key={index}>
               <img src={images.find((f)=>f.name === type.type.name).img} alt={type.type.name}/>
                 <h4>{type.type.name.toUpperCase()}</h4>
                 </div>
@@ -213,8 +215,8 @@ const PokeDetail = () => {
           <div className="evolution-detail">
             <h3>CHAIN of EVOLUTIONS</h3>
             {evolutionChain.length>0 ?
-              evolutionChain.map((evolve) => (
-                <button
+              evolutionChain.map((evolve, index) => (
+                <button key={index}
                   onClick={() => {
                     window.location.reload();
                     window.scrollTo(0, 0);

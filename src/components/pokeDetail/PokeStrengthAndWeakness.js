@@ -6,9 +6,9 @@ const PokeStrengthAndWeakness = ({title, strengthAndWeakness}) => {
       <h3>{title}</h3>
     <div className="poke-sandw-container">
     {strengthAndWeakness.length > 0 ? (
-      strengthAndWeakness.map((sw) => {
+      strengthAndWeakness.map((sw, index) => {
         return (
-          <div className="poke-sandw">
+          <div key={index} className="poke-sandw">
             <img src={images.find((f) => f.name === sw).img} alt={sw}/>
             <p>{sw.toUpperCase()}</p>
           </div>

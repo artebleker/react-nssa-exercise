@@ -1,48 +1,54 @@
-.type-search-bar{
-    display: flex;
-    flex-direction: column;
+.type-search-bar {
+  display: flex;
+  flex-direction: column;
 }
-.type-search-bar-button{
-    padding: 20px 0px;
-    cursor: pointer;
-    background: rgb(10, 84, 123);
-    border: none;
-    border-bottom: rgb(131, 188, 219) solid 3px;
-    color: white;
-    box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.2);
-}
-
-.type-search-bar-button:hover{
-    background: rgb(131, 188, 219);    
-    box-shadow: inset 0px 5px 10px 3px rgba(0, 0, 0, 0.2);
+.type-search-bar-button {
+  padding: 20px 0px;
+  cursor: pointer;
+  background: rgb(10, 84, 123);
+  border: none;
+  border-bottom: rgb(131, 188, 219) solid 3px;
+  color: white;
+  box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.2);
 }
 
-.type-search-bar-button_open{
-    background: rgb(131, 188, 219);    
-    border: solid 2px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    padding: 4px;
-    font-weight: 600;
-}
-.type-search-bar-button_open:hover{
-    background: rgb(10, 84, 123);    
-    color: white;
-}
-.type-search-bar-button_open:active{
-    background: rgb(161, 73, 175);    
-    color: white;
+.type-search-bar-button:hover {
+  background: rgb(131, 188, 219);
+  box-shadow: inset 0px 5px 10px 3px rgba(0, 0, 0, 0.2);
 }
 
-.type-search{
-    display: grid;
+.type-search-bar-button_open {
+  background: rgb(131, 188, 219);
+  border: solid 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  padding: 4px;
+  font-weight: 600;
 }
-.type-search-grid{
-    display: grid;
-    grid-template-columns: repeat(5, 0.3fr);
-    justify-content: center;
-    align-items: center;
+.type-search-bar-button_open:hover {
+  background: rgb(10, 84, 123);
+  color: white;
+}
+.type-search-bar-button_open:active {
+  background: rgb(161, 73, 175);
+  color: white;
+}
 
+.type-search {
+  display: grid;
 }
-.type-search-off{
-    display: none;
+.type-search-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 0.3fr);
+  justify-content: center;
+  align-items: center;
 }
+.type-search-off {
+  display: none;
+}
+
+@media screen and (max-width: 400px) {
+  .type-search-grid {
+    grid-template-columns: repeat(4, 0.3fr);
+  }
+}
+

@@ -1,9 +1,27 @@
 .poke-list {
   display: grid;
-  /* grid: auto / auto auto auto auto; */
   grid-template-columns: repeat(5, 1fr);
   place-content: center;
   margin: 30px;
-  /* justify-content: center;
-  align-content: center; */
+}
+
+@media screen and (max-width: 1120px) {
+  .poke-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 900px) {
+  .poke-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 630px) {
+  .poke-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 488px) {
+  .poke-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

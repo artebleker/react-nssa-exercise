@@ -4,3 +4,10 @@
 .header img{
 margin: 15px 50px 5px;
 }
+
+@media screen and (max-width: 300px) {
+    .header img{
+    margin: 15px 15px 5px;
+    width: 170px;
+    }
+}
