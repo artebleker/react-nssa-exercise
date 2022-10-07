@@ -1,11 +1,11 @@
 import React, { useState, memo, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 const PokeAbility = ({ ability, abilityImg }) => {
   const [isModalAbility, setIsModalAbility] = useState(false);
   const [abilityData, setAbilityData] = useState([]);
 
-  const error = useNavigate();
+  // const error = useNavigate();
   useEffect(() => {
     const endPointPokemon = `https://pokeapi.co/api/v2/ability/${ability}`;
     axios
@@ -15,7 +15,7 @@ const PokeAbility = ({ ability, abilityImg }) => {
       })
       .catch((err) => {
         console.error(err);
-        error("*");
+        // error("*");
       });
   }, [ability]);
 
@@ -30,7 +30,7 @@ const PokeAbility = ({ ability, abilityImg }) => {
         }
       >
         {abilityImg && <img src={abilityImg} alt="Ability" />}
-        {abilityData.data && <p>{abilityData.data.effect_entries[1].effect}</p>}
+        {abilityData.data && <p>{abilityData.data.effect_entries[1].effect}</p> }   
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import "./pokeListContainer.css";
 import TypeSearch from "../typeSearch/TypeSearch";
 import Loader from "../loader/Loader";
 import UpButton from "../upButton/UpButton";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 const PokeListContainer = () => {
   // State Data list of all pokemons
   const [pokemonData, setPokemonData] = useState([]);
@@ -20,7 +20,7 @@ const PokeListContainer = () => {
   const [queryType, setQueryType] = useState("");
 
   // initialize useNavigate
-  const error = useNavigate();
+  // const error = useNavigate();
 
   // get all data and place it in states
   useEffect(() => {
@@ -36,8 +36,8 @@ const PokeListContainer = () => {
         setIsLoading(false);
       })
       .catch((err) => {
-        console.error(err);
-        error("*");
+        console.error(err);    
+        // error("*");
       });
     axios
       .get("https://pokeapi.co/api/v2/type?limit=100000&offset=0")
@@ -46,7 +46,7 @@ const PokeListContainer = () => {
       })
       .catch((err) => {
         console.error(err);
-        error("*");
+        // error("*");
       });
   }, []);
 

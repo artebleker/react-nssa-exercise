@@ -80,7 +80,7 @@ const PokeDetail = () => {
       })
       .catch((err) => {
         console.error(err);
-        error("*");
+        // error("*");
       });
   }
 
@@ -118,18 +118,18 @@ const PokeDetail = () => {
                 .then((res) => setEvolutionChain(res))
                 .catch((err) => {
                   console.error(err);
-                  error("*");
+                  // error("*");
                 });
             }
           })
           .catch((err) => {
             console.error(err);
-            error("*");
+            // error("*");
           });
       })
       .catch((err) => {
         console.error(err);
-        error("*");
+        // error("*");
       });
   }
   
